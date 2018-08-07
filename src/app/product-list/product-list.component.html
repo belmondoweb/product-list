@@ -1,0 +1,26 @@
+<section>
+    <!-- Property Binding (One-Way Binding) -->
+    <table [style.font-size.px]="fontSize" border="1">
+        <tr>
+            <th>Product Name</th>
+
+            <!-- Event Binding (One-Way to Source)-->
+            <th (click)="showAveragePrice()">Unit Price</th>
+            <th>Units in Stock</th>
+            <th>Units on Order</th>
+        </tr>
+        <tr *ngFor="let p of products" [title]="p.productName">
+            <td>
+                <a routerLink="/products/{{p.productID}}">{{p.productName}}</a>
+            </td>
+            <td>{{p.unitPrice | currency:'ILS':true:'2.2'}}</td>
+            <td>{{p.unitsInStock}}</td>
+            <td>{{p.unitsOnOrder}}</td>
+         </tr>
+    </table>
+
+
+    <label>Change font size: </label>
+    <input type="range" min="10" max="30" [(ngModel)]="fontSize" />
+    
+</section>
