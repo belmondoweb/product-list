@@ -12,8 +12,6 @@ export class ProductDetailsComponent implements OnInit {
 
     product: Product;
 
-    // route = המידע בנוגע לנתיב
-    // router = פעולות על הנתיבים
     constructor(private productsService: ProductsService,
                 private route: ActivatedRoute,
                 private router: Router) { }
